@@ -1,0 +1,11 @@
+$breakpoints: (
+        small: 375px,
+        medium: 768px,
+        large: 1024px,
+        x-large: 1440px,
+);
+
+$buttons-colors: (
+        primary: var(--color-green),
+        secondary: var(--color-blue)
+)

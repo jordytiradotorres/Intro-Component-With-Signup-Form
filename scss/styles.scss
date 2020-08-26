@@ -1,15 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-
-:root {
-  --color-red: hsl(0, 100%, 74%);
-  --color-green: hsl(154, 59%, 51%);
-  --color-blue: hsl(248, 32%, 49%);
-  --color-dark-blue: hsl(249, 10%, 26%);
-  --color-grayish-blue: hsl(246, 25%, 77%);
-
-  --family-Poppins: 'Poppins', sans-serif;
-}
-
-body {
-  font-family: var(--family-Poppins);
-}
+@import './config/variables';
+@import './mixins/media-queries';
+@import './mixins/buttons';
+@import './functions/long-shadow';
+@import './config/base';
+@import './components/description';
+@import "./components/signup";

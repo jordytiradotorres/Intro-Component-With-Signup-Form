@@ -5,9 +5,149 @@
   --color-blue: hsl(248, 32%, 49%);
   --color-dark-blue: hsl(249, 10%, 26%);
   --color-grayish-blue: hsl(246, 25%, 77%);
-  --family-Poppins: 'Poppins', sans-serif; }
+  --family-Poppins: 'Poppins', sans-serif;
+  box-sizing: border-box; }
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit; }
 
 body {
+  font-family: var(--family-Poppins);
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url(../images/bg-intro-mobile.png);
+  background-color: var(--color-red); }
+  @media (min-width: 768px) {
+    body {
+      background-image: url(../images/bg-intro-desktop.png); } }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  margin: 0; }
+
+.container {
+  width: 85%;
+  margin: 0 auto; }
+  @media (min-width: 768px) {
+    .container {
+      width: 80%; } }
+  @media (min-width: 1024px) {
+    .container {
+      max-width: 1200px; } }
+
+@media (min-width: 768px) {
+  main {
+    display: flex;
+    align-items: center;
+    justify-content: center; } }
+
+.button {
+  text-align: center;
+  color: white;
+  padding: 1em 2em;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  cursor: pointer; }
+
+button:focus,
+input:focus {
+  outline: 0; }
+
+input {
+  display: block;
+  width: 100%;
   font-family: var(--family-Poppins); }
+
+.button {
+  background: var(--color-green); }
+  .button.secondary {
+    background: var(--color-blue); }
+
+.description {
+  padding-top: 5.5em;
+  color: white;
+  text-align: center;
+  margin-bottom: 3em; }
+  @media (min-width: 768px) {
+    .description {
+      margin-right: 2em;
+      flex: 1;
+      padding-top: 0;
+      margin-bottom: 0; } }
+  @media (min-width: 1024px) {
+    .description {
+      text-align: left; } }
+  .description h2 {
+    font-weight: 700; }
+    @media (min-width: 1024px) {
+      .description h2 {
+        font-size: 3em;
+        line-height: 1.2; } }
+  .description p {
+    font-weight: 300;
+    margin-top: 1.5em; }
+
+@media (min-width: 768px) {
+  .signup {
+    margin-left: 2em;
+    flex: 1; } }
+
+.button.secondary {
+  text-align: center;
+  font-weight: 300;
+  padding: 1em 5em;
+  line-height: 1.6;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05), 0 2px 0 rgba(0, 0, 0, 0.05), 0 3px 0 rgba(0, 0, 0, 0.05), 0 4px 0 rgba(0, 0, 0, 0.05), 0 5px 0 rgba(0, 0, 0, 0.05), 0 6px 0 rgba(0, 0, 0, 0.05), 0 7px 0 rgba(0, 0, 0, 0.05), 0 8px 0 rgba(0, 0, 0, 0.05); }
+
+.button.primary {
+  text-transform: uppercase;
+  font-size: 0.75em;
+  position: relative; }
+
+.button.primary::after {
+  content: '';
+  position: absolute;
+  bottom: 0.3em;
+  left: 0;
+  height: 5px;
+  width: 100%;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05), 0 2px 0 rgba(0, 0, 0, 0.05), 0 3px 0 rgba(0, 0, 0, 0.05), 0 4px 0 rgba(0, 0, 0, 0.05), 0 5px 0 rgba(0, 0, 0, 0.05); }
+
+.form {
+  margin-top: 1.5em;
+  background-color: white;
+  padding: 1.2em;
+  border-radius: 5px;
+  margin-bottom: 4em;
+  position: relative;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05), 0 2px 0 rgba(0, 0, 0, 0.05), 0 3px 0 rgba(0, 0, 0, 0.05), 0 4px 0 rgba(0, 0, 0, 0.05), 0 5px 0 rgba(0, 0, 0, 0.05), 0 6px 0 rgba(0, 0, 0, 0.05), 0 7px 0 rgba(0, 0, 0, 0.05), 0 8px 0 rgba(0, 0, 0, 0.05); }
+  @media (min-width: 768px) {
+    .form {
+      margin-bottom: 0; } }
+  .form * + * {
+    margin-top: 0.75em; }
+  .form input {
+    padding: 1em;
+    border: 1px solid var(--color-grayish-blue);
+    border-radius: 5px;
+    font-weight: 600; }
+  .form .term {
+    color: var(--color-grayish-blue);
+    font-size: 0.7em;
+    text-align: center;
+    padding: 0 1.5em; }
+    .form .term span {
+      color: var(--color-red);
+      font-weight: 700; }
 
 /*# sourceMappingURL=styles.css.map */

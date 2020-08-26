@@ -1,0 +1,65 @@
+.signup {
+  @include mq(medium) {
+    margin-left: 2em;
+    flex: 1;
+  }
+}
+
+.button.secondary {
+  text-align: center;
+  font-weight: 300;
+  padding: 1em 5em;
+  line-height: 1.6;
+  box-shadow: long-shadow(8);
+}
+.button.primary {
+  text-transform: uppercase;
+  font-size: 0.75em;
+  position: relative;
+}
+.button.primary::after {
+  content: '';
+  position: absolute;
+  bottom: 0.3em;
+  left: 0;
+  height: 5px;
+  width: 100%;
+  box-shadow: long-shadow(5);
+}
+
+.form {
+  margin-top: 1.5em;
+  background-color: white;
+  padding: 1.2em;
+  border-radius: 5px;
+  margin-bottom: 4em;
+  position: relative;
+  box-shadow: long-shadow(8);
+
+  @include mq(medium) {
+    margin-bottom: 0;
+  }
+
+  & * + * {
+    margin-top: 0.75em;
+  }
+
+  input {
+    padding: 1em;
+    border: 1px solid var(--color-grayish-blue);
+    border-radius: 5px;
+    font-weight: 600;
+  }
+
+  .term {
+    color: var(--color-grayish-blue);
+    font-size: 0.7em;
+    text-align: center;
+    padding: 0 1.5em;
+
+    span {
+      color: var(--color-red);
+      font-weight: 700;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+@mixin buttons($colors...) {
+  .button {
+    background: map-get($buttons-colors, nth($colors, 1)); // con map
+
+    @if length($colors) > 1 {
+      @for $i from 2 through length($colors) {
+        &.#{nth($colors, $i)} {
+          background: #{map-get($buttons-colors, nth($colors, $i))};
+        }
+      }
+    }
+  }
+}
