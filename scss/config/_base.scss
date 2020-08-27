@@ -84,3 +84,14 @@ input {
 }
 
 @include buttons(map-keys($buttons-colors) ...);
+
+input[type='submit'] {
+  transition: background-color 0.3s;
+}
+input[type='submit']:hover {
+  background-color: lighten(hsl(154, 59%, 51%), 10);
+}
+
+.errorEmail::placeholder {
+  color: var(--color-red);
+}

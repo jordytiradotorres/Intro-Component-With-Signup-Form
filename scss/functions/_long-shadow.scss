@@ -1,12 +1,8 @@
 @function long-shadow($size) {
-  $long: unquote(#{0 1px 0 rgba(#000, 5%)});
+  $long: unquote(#{0 1px rgba(#000, 5%)});
 
   @for $i from 2 through $size {
-    $long: append(
-      $long,
-      0 #{$i * 1px} 0 rgba(#000, 5%),
-      comma
-    );
+    $long: append($long, 0 #{$i * 1px} rgba(#000, 5%), comma);
   }
 
   @return $long;

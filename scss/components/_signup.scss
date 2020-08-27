@@ -5,26 +5,37 @@
   }
 }
 
-.button.secondary {
-  text-align: center;
-  font-weight: 300;
-  padding: 1em 5em;
-  line-height: 1.6;
-  box-shadow: long-shadow(8);
+.button {
+  &.secondary {
+    text-align: center;
+    font-weight: 300;
+    padding: 1em 5em;
+    line-height: 1.6;
+    box-shadow: long-shadow(8);
+  }
+
+  &.primary {
+    text-transform: uppercase;
+    font-size: 0.75em;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0.3em;
+      left: 0;
+      height: 5px;
+      width: 100%;
+      box-shadow: long-shadow(5);
+    }
+  }
 }
-.button.primary {
-  text-transform: uppercase;
-  font-size: 0.75em;
-  position: relative;
-}
-.button.primary::after {
-  content: '';
-  position: absolute;
-  bottom: 0.3em;
-  left: 0;
-  height: 5px;
-  width: 100%;
-  box-shadow: long-shadow(5);
+
+form.invalid input:invalid,
+form.invalid select:invalid,
+form.invalid input.invalid,
+form.invalid select.invalid {
+  border: 2px solid var(--color-red);
 }
 
 .form {
@@ -36,12 +47,27 @@
   position: relative;
   box-shadow: long-shadow(8);
 
+  & * + * {
+    margin-top: 0.75em;
+  }
+
   @include mq(medium) {
     margin-bottom: 0;
   }
+  @include mq(large) {
+    padding: 2em;
+  }
 
-  & * + * {
-    margin-top: 0.75em;
+  div {
+    position: relative;
+    img {
+      display: inline-block;
+      position: absolute;
+      right: 1em;
+      top: 0;
+      width: 20px;
+      display: none;
+    }
   }
 
   input {
@@ -51,6 +77,15 @@
     font-weight: 600;
   }
 
+  span.error {
+    text-align: right;
+    display: block;
+    color: var(--color-red);
+    font-size: 0.75em;
+    font-style: italic;
+    margin-top: 0.4em;
+  }
+
   .term {
     color: var(--color-grayish-blue);
     font-size: 0.7em;
@@ -58,8 +93,15 @@
     padding: 0 1.5em;
 
     span {
-      color: var(--color-red);
-      font-weight: 700;
+      a {
+        text-decoration: none;
+        color: var(--color-red);
+        font-weight: 700;
+        transition: all 0.2s;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
     }
   }
 }

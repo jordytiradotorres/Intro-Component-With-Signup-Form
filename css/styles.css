@@ -73,6 +73,15 @@ input {
   .button.secondary {
     background: var(--color-blue); }
 
+input[type='submit'] {
+  transition: background-color 0.3s; }
+
+input[type='submit']:hover {
+  background-color: #61d6a3; }
+
+.errorEmail::placeholder {
+  color: var(--color-red); }
+
 .description {
   padding-top: 5.5em;
   color: white;
@@ -107,21 +116,25 @@ input {
   font-weight: 300;
   padding: 1em 5em;
   line-height: 1.6;
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05), 0 2px 0 rgba(0, 0, 0, 0.05), 0 3px 0 rgba(0, 0, 0, 0.05), 0 4px 0 rgba(0, 0, 0, 0.05), 0 5px 0 rgba(0, 0, 0, 0.05), 0 6px 0 rgba(0, 0, 0, 0.05), 0 7px 0 rgba(0, 0, 0, 0.05), 0 8px 0 rgba(0, 0, 0, 0.05); }
-
+  box-shadow: 0 1px rgba(0, 0, 0, 0.05), 0 2px rgba(0, 0, 0, 0.05), 0 3px rgba(0, 0, 0, 0.05), 0 4px rgba(0, 0, 0, 0.05), 0 5px rgba(0, 0, 0, 0.05), 0 6px rgba(0, 0, 0, 0.05), 0 7px rgba(0, 0, 0, 0.05), 0 8px rgba(0, 0, 0, 0.05); }
 .button.primary {
   text-transform: uppercase;
   font-size: 0.75em;
   position: relative; }
+  .button.primary::after {
+    content: '';
+    position: absolute;
+    bottom: 0.3em;
+    left: 0;
+    height: 5px;
+    width: 100%;
+    box-shadow: 0 1px rgba(0, 0, 0, 0.05), 0 2px rgba(0, 0, 0, 0.05), 0 3px rgba(0, 0, 0, 0.05), 0 4px rgba(0, 0, 0, 0.05), 0 5px rgba(0, 0, 0, 0.05); }
 
-.button.primary::after {
-  content: '';
-  position: absolute;
-  bottom: 0.3em;
-  left: 0;
-  height: 5px;
-  width: 100%;
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05), 0 2px 0 rgba(0, 0, 0, 0.05), 0 3px 0 rgba(0, 0, 0, 0.05), 0 4px 0 rgba(0, 0, 0, 0.05), 0 5px 0 rgba(0, 0, 0, 0.05); }
+form.invalid input:invalid,
+form.invalid select:invalid,
+form.invalid input.invalid,
+form.invalid select.invalid {
+  border: 2px solid var(--color-red); }
 
 .form {
   margin-top: 1.5em;
@@ -130,24 +143,47 @@ input {
   border-radius: 5px;
   margin-bottom: 4em;
   position: relative;
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05), 0 2px 0 rgba(0, 0, 0, 0.05), 0 3px 0 rgba(0, 0, 0, 0.05), 0 4px 0 rgba(0, 0, 0, 0.05), 0 5px 0 rgba(0, 0, 0, 0.05), 0 6px 0 rgba(0, 0, 0, 0.05), 0 7px 0 rgba(0, 0, 0, 0.05), 0 8px 0 rgba(0, 0, 0, 0.05); }
+  box-shadow: 0 1px rgba(0, 0, 0, 0.05), 0 2px rgba(0, 0, 0, 0.05), 0 3px rgba(0, 0, 0, 0.05), 0 4px rgba(0, 0, 0, 0.05), 0 5px rgba(0, 0, 0, 0.05), 0 6px rgba(0, 0, 0, 0.05), 0 7px rgba(0, 0, 0, 0.05), 0 8px rgba(0, 0, 0, 0.05); }
+  .form * + * {
+    margin-top: 0.75em; }
   @media (min-width: 768px) {
     .form {
       margin-bottom: 0; } }
-  .form * + * {
-    margin-top: 0.75em; }
+  @media (min-width: 1024px) {
+    .form {
+      padding: 2em; } }
+  .form div {
+    position: relative; }
+    .form div img {
+      display: inline-block;
+      position: absolute;
+      right: 1em;
+      top: 0;
+      width: 20px;
+      display: none; }
   .form input {
     padding: 1em;
     border: 1px solid var(--color-grayish-blue);
     border-radius: 5px;
     font-weight: 600; }
+  .form span.error {
+    text-align: right;
+    display: block;
+    color: var(--color-red);
+    font-size: 0.75em;
+    font-style: italic;
+    margin-top: 0.4em; }
   .form .term {
     color: var(--color-grayish-blue);
     font-size: 0.7em;
     text-align: center;
     padding: 0 1.5em; }
-    .form .term span {
+    .form .term span a {
+      text-decoration: none;
       color: var(--color-red);
-      font-weight: 700; }
+      font-weight: 700;
+      transition: all 0.2s; }
+      .form .term span a:hover {
+        text-decoration: underline; }
 
 /*# sourceMappingURL=styles.css.map */
